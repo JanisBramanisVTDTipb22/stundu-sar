@@ -1,6 +1,10 @@
 import Diena from './Diena';
+import Hello from "./Hello";
 
 function App(props){
+
+  const allNames = ["Jēkabs", "Markus", "Klucis"]
+
   const PirmdienasStundas = [
       "Sports",
       "DabasZinibas",
@@ -49,15 +53,18 @@ function App(props){
       ]}
     ];
     
-    const dienasJSX = visasStundas.map((diena, indekss) => {
-      return <Diena key={indekss} diena={diena.diena} stundas={diena.stundas} />
+    //const dienasJSX = visasStundas.map((diena, indekss) => {
+      //return <Diena key={indekss} diena={diena.diena} stundas={diena.stundas} />
+
+      const helloJSX = allNames.map((name, index) => {
+        return <Hello key={index} name={name} />;
     })
 
   //export default function App
   return(
     <>
     <div>
-  <ol>{dienasJSX}</ol>
+  <ol>{helloJSX}</ol>
     </div>
     </>
   );

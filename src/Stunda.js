@@ -1,8 +1,9 @@
+import styles from "./stunda.module.css"
 function Stunda(props){
-    const stundas = []
+    
     return(
 <>
-<li>{props.nosaukums}</li>
+<li className={styles.violets}>{props.nosaukums}</li>
 </>
     )
 }
