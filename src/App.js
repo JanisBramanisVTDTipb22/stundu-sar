@@ -1,72 +1,41 @@
-import Diena from './Diena';
-import Hello from "./Hello";
+import React from 'react';
+import Hello from './Hello';
+import Counter from './Counter';
+import Check from './check';
+import LabeledCheck from './labeledCheck';
 
-function App(props){
+function App() {
+  const allNames = ["Jēkabs", "Markus", "Klucis"];
+  const results = [10, 35, 100];
+  const checkValues = [true, true, false];
 
-  const allNames = ["Jēkabs", "Markus", "Klucis"]
+  const helloJSX = allNames.map((name, index) => (
+    <Hello key={index} name={name} />
+  ));
 
-  const PirmdienasStundas = [
-      "Sports",
-      "DabasZinibas",
-      "Vesture",
-      "Krievu valoda"
-  
-  ]
-    const OtrdienasStundas = [
-       "Cita stunda",
-       "Vel stunda",
-    
-    ];
-    const visasStundas = [
-      {diena: "Pirmdiena", 
-      stundas: [ 
-        "Sports",
-        "DabasZinibas",
-        "Vesture",
-        "Krievu valoda"
-      ]},
-      {diena: "Otrdiena",
-      stundas: [
-      "Cita stunda",
-       "Vel stunda",
-      ]},
-      {diena: "Trešdiena", 
-      stundas: [ 
-        "Programmēšana",
-        "Programmēšana",
-        "Programmēšana",
-        "Programmēšana"
-    ]},
-      {diena: "Ceturtdiena", 
-      stundas: [ 
-        "VAMS",
-        "VAMS",
-        "VAMS",
-        "VAMS"
-      ]},
-      {diena: "Piektdiena", 
-      stundas: [ 
-        "Sports",
-        "Latviešu valoda",
-        "Matematika",
-        "Matematika"
-      ]}
-    ];
-    
-    //const dienasJSX = visasStundas.map((diena, indekss) => {
-      //return <Diena key={indekss} diena={diena.diena} stundas={diena.stundas} />
+  const counterJSX = results.map((result, index) => (
+    <Counter key={index} result={result} />
+  ));
 
-      const helloJSX = allNames.map((name, index) => {
-        return <Hello key={index} name={name} />;
-    })
+  const checkJSX = checkValues.map((value, index) => (
+    <Check key={index} value={value} />
+  ));
 
-  //export default function App
-  return(
-    <>
+  const labeledCheckJSX = labeledChecks.map((item, index) => (
+    <LabeledCheck key={index} label={item.label} check={item.check} />
+  ));
+
+  return (
     <div>
-  <ol>{helloJSX}</ol>
+      <h2>Hello Component:</h2>
+      <ul>{helloJSX}</ul>
+      <h2>Counter Component:</h2>
+      {counterJSX}
+      <h2>Check Component:</h2>
+      {checkJSX}
+      <h2>LabeledCheck Component:</h2>
+      {labeledCheckJSX}
     </div>
-    </>
   );
 }
 export default App;
