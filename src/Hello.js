@@ -11,7 +11,7 @@ function Hello(props) {
         <div>
             <input value={name} onChange={changeName}></input>
         </div>
-        <p>hello, {name}!</p>
+        <p>hello {name}</p>
     </>
     )
 }

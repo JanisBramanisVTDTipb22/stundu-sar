@@ -1,13 +1,21 @@
+
 import React, { useState } from 'react';
 
-function LabeledCheck(props) {
-  const [isChecked, setIsChecked] = useState(props.check);
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
-  };
+function LabeledCheck({ label, check }) {
+  const [isChecked, setIsChecked] = useState(check);
 
   return (
-    {props,label}
+    <div>
+      <label>
+        <input
+          type="checkbox"
+          checked={isChecked}
+          onChange={() => setIsChecked(!isChecked)}
+        />
+        {label}
+      </label>
+    </div>
   );
-  }
+}
+
 export default LabeledCheck;

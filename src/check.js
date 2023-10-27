@@ -1,5 +1,7 @@
-import { usestate } from "react";
+import React from 'react';
 
-function click() {
-    
+function Check({ value }) {
+  return <div>{String(value)}</div>;
 }
+
+export default Check;
