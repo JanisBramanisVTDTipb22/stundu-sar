@@ -1,9 +1,15 @@
-import styles from "./stunda.module.css"
-function Stunda(props){
-    return(
-        <>
-    <li className={styles.violets}>{props.nosaukums}</li>
-        </>
-    )
+import styles from "./stunda_module.css";
+
+function Stunda(props) {
+ 
+  return (
+    <>
+      <li className={styles.violets}>{props.nosaukums}</li>
+    </>
+  );
 }
+
+//{stundas.map((stunda) => (
+//    <li>{stunda}</li>
+//  ))}
 export default Stunda;
